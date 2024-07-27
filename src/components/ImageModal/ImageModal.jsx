@@ -21,12 +21,6 @@ export default function ImageModal({ isOpen, isClose, image }) {
       style={customStyles}
     >
       <img src={image.urls.regular} alt={image.alt_description} />
-      <ul>
-        <li>{image.description}</li>
-        <li>Creator: {image.user.name}</li>
-        <li>Created at: {image.created_at}</li>
-        <li>Like`s: {image.likes}</li>
-      </ul>
     </Modal>
   );
 }

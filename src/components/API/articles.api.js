@@ -1,6 +1,6 @@
 import axios from "axios";
 
-axios.defaults.baseURL = "https://api.unsplsh.com";
+axios.defaults.baseURL = "https://api.unspash.com";
 export const FechArticles = async (topic, page) => {
   const results = await axios.get(`/search/photos`, {
     params: {

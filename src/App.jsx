@@ -56,7 +56,7 @@ export default function App() {
   }, [page, topic]);
   return (
     <div>
-      <SearchBar onSubmit={handalSubmit} />
+      <SearchBar onSubmit={handalSubmit} toast={toast} />
       {articles.length > 0 && (
         <ImageGallery items={articles} isOpen={modalOpen} />
       )}
@@ -74,11 +74,7 @@ export default function App() {
       {error && <ErrorMessag toast={toast} />}
       {articles.length > 0 && <LoadMoreBtn handelButton={handelButton} />}
       {modalIsOpen && (
-        <ImageModal
-          isOpen={modalOpen}
-          onRequestClose={modalClose}
-          image={modalImg}
-        />
+        <ImageModal isOpen={modalOpen} isClose={modalClose} image={modalImg} />
       )}
       <Toaster position="top-center" reverseOrder={true} />
     </div>
