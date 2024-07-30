@@ -1,4 +1,5 @@
-export default function SearchBarSearchBar({ onSubmit, toast }) {
+import toast from "react-hot-toast";
+export default function SearchBarSearchBar({ onSubmit }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;

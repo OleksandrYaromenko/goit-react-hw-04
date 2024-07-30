@@ -5,7 +5,7 @@ import { Hourglass } from "react-loader-spinner";
 import SearchBar from "./components/SearchBar/SearchBar";
 import LoadMoreBtn from "./components/LoadMoreBtn/LoadMoreBtn";
 import ErrorMessag from "./components/ErrorMessag/ErrorMessag";
-import toast, { Toaster } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 
 import ImageModal from "./components/ImageModal/ImageModal";
 
@@ -56,7 +56,7 @@ export default function App() {
   }, [page, topic]);
   return (
     <div>
-      <SearchBar onSubmit={handalSubmit} toast={toast} />
+      <SearchBar onSubmit={handalSubmit}/>
       {articles.length > 0 && (
         <ImageGallery items={articles} isOpen={modalOpen} />
       )}
@@ -71,7 +71,7 @@ export default function App() {
           colors={["#306cce", "#72a1ed"]}
         />
       )}
-      {error && <ErrorMessag toast={toast} />}
+      {error && <ErrorMessag/>}
       {articles.length > 0 && <LoadMoreBtn handelButton={handelButton} />}
       {modalIsOpen && (
         <ImageModal isOpen={modalOpen} isClose={modalClose} image={modalImg} />
